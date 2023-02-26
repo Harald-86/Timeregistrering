@@ -44,6 +44,7 @@ export default function RegistrerTimer(props) {
     <>
       <hr />
       <Form onSubmit={handleSubmit(registrering)}>
+        {timeRegError && <ValidationError>{timeRegError}</ValidationError>}
         <Form.Group>
           <Form.Label htmlFor="time">Timer jobbet</Form.Label>
           <Form.Control type="text" id="time" {...register("timer")} />

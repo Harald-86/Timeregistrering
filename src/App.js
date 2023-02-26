@@ -1,6 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { AuthProvider } from "./context/AuthContext";
-import { useNavigate } from "react-router-dom";
 
 //Bootstrap
 import Container from "react-bootstrap/Container";
@@ -17,6 +16,7 @@ import Footer from "./components/footer/Footer";
 import "./App.scss";
 
 function App() {
+  document.title = "Logg inn | TimeKontroll";
   return (
     <AuthProvider>
       <Router>

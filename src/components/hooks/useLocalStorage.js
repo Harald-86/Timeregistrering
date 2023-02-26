@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 // Usage
+
 function App() {
   // Similar to useState but first arg is key to the value in local storage.
   const [name, setName] = useLocalStorage("name", "Bob");
