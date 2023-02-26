@@ -1,6 +1,7 @@
 @import "partials/custom";
 @import "partials/layout";
 @import "partials/footer";
+@import "partials/body";
 
 @import "../../node_modules/bootstrap/scss/mixins/banner";
 @include bsBanner("");
