@@ -1,0 +1,10 @@
+.footer {
+  padding: 1em 1.5em;
+  background-color: $body-bg;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8em;
+  margin-top: 2rem;
+}
