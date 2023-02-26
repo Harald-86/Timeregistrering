@@ -23,7 +23,7 @@ Ta kontakt om du vil teste prosjektet og vil låne bruker/passord.
 ## Installasjon
 
 - Last ned koden og kjør NPM install i terminalen
-- Kjør <<npm run start>> for å starte liveserver
+- npm run start for å starte liveserver
 
 
 ![image](skjermdump.png)
