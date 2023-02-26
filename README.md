@@ -26,4 +26,4 @@ Ta kontakt om du vil teste prosjektet og vil låne bruker/passord.
 - Kjør <<npm run start>> for å starte liveserver
 
 
-![image](skjermdump1.png)
+![image](skjermdump.png)
