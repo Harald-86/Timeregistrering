@@ -6,6 +6,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 ## Beskrivelse
 
 Enkel webapplikasjon hvor du kan registrere arbeidstimer.
+Ta kontakt om du vil teste prosjektet og vil låne bruker/passord.
 
 
 
@@ -22,5 +23,7 @@ Enkel webapplikasjon hvor du kan registrere arbeidstimer.
 ## Installasjon
 
 - Last ned koden og kjør NPM install i terminalen
-- Kjør NPM run start for å starte liveserver
+- Kjør <<npm run start>> for å starte liveserver
 
+
+![image](skjermdump1.png)
