@@ -4,6 +4,7 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Beskrivelse
+TIL INFO: Heroku kan bruke litt tid på å våkne.
 
 Enkel webapplikasjon hvor du kan registrere arbeidstimer.
 Ta kontakt om du vil teste prosjektet og vil låne bruker/passord.
