@@ -3,6 +3,7 @@ import { useContext } from "react";
 import Heading from "../common/Heading";
 import AuthContext from "../../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import Button from "react-bootstrap/Button";
 
 function NavBar() {
   const [auth, setAuth] = useContext(AuthContext);
@@ -15,20 +16,18 @@ function NavBar() {
 
   return (
     <nav>
-      <div className="brand">
-        {auth ? (
-          <>
-            <Link to="/minside">
-              <Heading size="2" title="Timekontroll" />
-            </Link>
-            <button onClick={loggut}>Logg ut</button>
-          </>
-        ) : (
-          <Link to="/">
+      {auth ? (
+        <>
+          <Link to="/minside">
             <Heading size="2" title="Timekontroll" />
           </Link>
-        )}
-      </div>
+          <Button onClick={loggut}>Logg ut</Button>
+        </>
+      ) : (
+        <Link to="/">
+          <Heading size="2" title="Timekontroll" />
+        </Link>
+      )}
     </nav>
   );
 }

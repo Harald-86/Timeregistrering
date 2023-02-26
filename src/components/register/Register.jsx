@@ -4,6 +4,8 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import ValidationError from "../common/FormError";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const schema = yup.object().shape({
   timer: yup.number().required(),
@@ -24,32 +26,45 @@ export default function RegistrerTimer(props) {
     resolver: yupResolver(schema),
   });
 
-  async function registrering(data) {
+  async function registrering(data, e) {
     try {
       const response = await http.post("timeregistreringer", {
         data,
       });
+      e.target.reset();
       props.oppdater();
-      console.log(response.data);
+      console.log("timer", response.data);
     } catch (error) {
-      console.log("Feil ved registrering av timer", error);
+      console.log("Feil ved registrering av time", error);
+      setTimeRegError(<ValidationError>Feil ved registrering av timer</ValidationError>);
     }
   }
 
   return (
     <>
-      <form onSubmit={handleSubmit(registrering)}>
-        {timeRegError && <ValidationError>{timeRegError}</ValidationError>}
-        <label htmlFor="time">Antall timer (kun hele)</label>
-        <input type="text" placeholder="f.eks 8" id="time" {...register("timer")} />
-        {errors.timer && <ValidationError>{errors.timer.message}</ValidationError>}
-        <label htmlFor="kommentar">Kommentar </label>
-        <input type="text" placeholder="f.eks 8" id="kommentar" {...register("kommentar")} />
+      <hr />
+      <Form onSubmit={handleSubmit(registrering)}>
+        <Form.Group>
+          <Form.Label htmlFor="time">Timer jobbet</Form.Label>
+          <Form.Control type="text" id="time" {...register("timer")} />
+          {errors.timer && (
+            <ValidationError>
+              <p>Bruk kun hele tall: f.eks 7</p>
+            </ValidationError>
+          )}
+          <Form.Text className="text-muted">Legg inn timer i hele timer f.eks 8 </Form.Text>
+        </Form.Group>
+        <Form.Group></Form.Group>
+        <Form.Label htmlFor="kommentar">Kommentar </Form.Label>
+        <Form.Control as="textarea" id="kommentar" {...register("kommentar")} />
+        <Form.Text className="text-muted">Kommentar til registreringen `Valgfritt`</Form.Text>
 
-        <button type="submit" className="cta">
+        <br />
+        <Button type="submit" className="cta">
           Registrer
-        </button>
-      </form>
+        </Button>
+      </Form>
+      <br />
     </>
   );
 }

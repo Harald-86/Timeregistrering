@@ -1,7 +1,8 @@
 @import "partials/custom";
+@import "partials/typography";
 @import "partials/layout";
 @import "partials/footer";
-@import "partials/body";
+@import "partials/timeliste";
 
 @import "../../node_modules/bootstrap/scss/mixins/banner";
 @include bsBanner("");

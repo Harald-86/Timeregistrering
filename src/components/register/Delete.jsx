@@ -15,6 +15,7 @@ export default function SlettTimer({ id, slett }) {
   return (
     <>
       <button
+        className="slett"
         onClick={() => {
           if (window.confirm("Vil du slette time?")) slettTime();
         }}

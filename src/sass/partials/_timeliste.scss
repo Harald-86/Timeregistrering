@@ -1,0 +1,25 @@
+.timeliste {
+  padding: 0.5rem;
+  overflow-y: scroll;
+  height: 600px;
+
+  ul {
+    list-style-type: none;
+  }
+
+  ul li {
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 0.5rem;
+  }
+  .slett {
+    background-color: rgb(209, 1, 1);
+    color: #fff;
+    border: none;
+    margin-right: 2px;
+  }
+
+  button {
+    border-radius: 5px;
+  }
+}

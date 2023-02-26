@@ -8,6 +8,9 @@ import axios from "axios";
 import { BASE_URL } from "../../constants/api";
 import ValidationError from "../common/FormError";
 import { useNavigate } from "react-router-dom";
+import Heading from "../common/Heading";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/Button";
 
 const LOGIN_URL = BASE_URL + "auth/local";
 console.log(BASE_URL);
@@ -42,11 +45,8 @@ export default function LoginForm() {
     setSubmitting(true);
     setLoginError(null);
 
-    console.log("form data", data);
-
     try {
       const response = await axios.post(LOGIN_URL, data);
-      console.log("response fra logg inn :", response.data);
       setAuth(response.data);
       naviger("/minside");
     } catch (error) {
@@ -58,17 +58,31 @@ export default function LoginForm() {
   }
 
   return (
-    <>
-      <form onSubmit={handleSubmit(onSubmit)}>
-        {loginError && <ValidationError>{loginError}</ValidationError>}
-        <fieldset disabled={submitting}>
-          <input name="email" placeholder="Epost" {...register("identifier")} />
-          {errors.email && <ValidationError>{errors.email.message}</ValidationError>}
-          <input type="password" name="password" placeholder="passord" {...register("password")} />
-          {errors.password && <ValidationError>{errors.password.message}</ValidationError>}
-          <button type="submit">{submitting ? "Logg inn.." : "Logg inn"}</button>
-        </fieldset>
-      </form>
-    </>
+    <div className="login">
+      <div className="login__container">
+        <Heading size="3" title="Logg inn" />
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          {loginError && <ValidationError>{loginError}</ValidationError>}
+          <fieldset disabled={submitting}>
+            <Form.Group>
+              <Form.Label>Brukernavn</Form.Label>
+              <Form.Control name="email" placeholder="Epost" {...register("identifier")} />
+              <Form.Text className="text-muted">Brukernavn eller Epost</Form.Text>
+              {errors.email && <ValidationError>{errors.email.message}</ValidationError>}
+            </Form.Group>
+            <Form.Group>
+              <Form.Label>Passord</Form.Label>
+              <Form.Control type="password" name="password" placeholder="passord" {...register("password")} />
+              <Form.Text className="text-muted">
+                Kontakt "hm.tomter@gmail.com" om du mangler brukernavn og passord
+              </Form.Text>
+              {errors.password && <ValidationError>{errors.password.message}</ValidationError>}
+            </Form.Group>
+            <br />
+            <Button type="submit">{submitting ? "Logg inn.." : "Logg inn"}</Button>
+          </fieldset>
+        </Form>
+      </div>
+    </div>
   );
 }

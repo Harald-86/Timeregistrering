@@ -1,14 +1,18 @@
 import Heading from "../common/Heading";
 import MineTimer from "./Hours";
-/* import TotaleTimer from "./Total"; */
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 export default function Regindex() {
   return (
-    <>
-      <Heading size="1" title="Timeregistrering" />
-
-      <MineTimer />
-      {/* <TotaleTimer /> */}
-    </>
+    <Container>
+      <Row>
+        <Heading size="1" title="Timeregistrering" />
+        <Col>
+          <MineTimer />
+        </Col>
+      </Row>
+    </Container>
   );
 }

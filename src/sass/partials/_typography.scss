@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;700&display=swap");
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "poppins", sans-serif;
+  color: rgb(8, 8, 73);
+}
+
+p,
+li {
+  font-family: "roboto", sans-serif;
+}
+
+.timer--warning {
+  color: red;
+  font-weight: bold;
+}
+
+.timer--info,
+.form__error {
+  border-radius: 3px;
+  color: red;
+  padding: 2px;
+  border: 1px solid red;
+  background-color: rgba(245, 177, 177, 0.288);
+}
