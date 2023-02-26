@@ -1,8 +1,19 @@
-# Getting Started with Create React App
+# Timekontroll | Registrering av arbeidstimer via web
 
+![image](skjermdump.png)
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+## Beskrivelse
+
+## Bygget med 
+- [React App]
+- [HTML]
+- [CSS]
+- [JavaScript]
+- [Sass](https://sass-lang)
+- [Bootstrap](https://getbootstrap.com)
+- [Strapi](https://docs.strapi.io/developer-docs/latest/getting-started/introduction.html)
+
 
 In the project directory, you can run:
 
