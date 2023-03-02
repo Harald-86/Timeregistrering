@@ -55,11 +55,11 @@ export default function RegistrerTimer(props) {
           )}
           <Form.Text className="text-muted">Legg inn timer i hele timer f.eks 8 </Form.Text>
         </Form.Group>
-        <Form.Group>
-        <Form.Label htmlFor="kommentar">Kommentar </Form.Label>
-        <Form.Control as="textarea" id="kommentar" {...register("kommentar")} />
-        <Form.Text className="text-muted">Kommentar til registreringen `Valgfritt`</Form.Text>
-</Form.Group>
+         <Form.Group>
+          <Form.Label htmlFor="kommentar">Kommentar </Form.Label>
+          <Form.Control as="textarea" id="kommentar" {...register("kommentar")} />
+          <Form.Text className="text-muted">Kommentar til registreringen `Valgfritt`</Form.Text>
+        </Form.Group>
         <br />
         <Button type="submit" className="cta">
           Registrer
