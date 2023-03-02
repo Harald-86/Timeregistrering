@@ -79,7 +79,7 @@ export default function LoginForm() {
               {errors.password && <ValidationError>{errors.password.message}</ValidationError>}
             </Form.Group>
             <br />
-            <Button type="submit">{submitting ? "Logg inn.." : "Logg inn"}</Button>
+            <Button type="submit">{submitting ? "Logger inn.." : "Logg inn"}</Button>
           </fieldset>
         </Form>
       </div>
